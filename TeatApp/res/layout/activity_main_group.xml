@@ -23,7 +23,7 @@
             android:textSize="28sp" />
 
         <ImageView
-            android:id="@+id/button1"
+            android:id="@+id/btnScanQR"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,9 +31,9 @@
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="14dp"
+            android:background="@drawable/qr_code"
             android:clickable="true"
-            android:focusable="true"
-            android:background="@drawable/qr_code"/>
+            android:focusable="true" />
 		
     </RelativeLayout>
 
