@@ -14,8 +14,8 @@ public class SplashActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
+		super.onCreate(savedInstanceState);
 //		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //				WindowManager.LayoutParams.FLAG_FULLSCREEN);// 去掉信息栏
 
@@ -26,7 +26,7 @@ public class SplashActivity extends Activity {
 //				Intent mainIntent = new Intent(SplashActivity.this,
 //						MainActivity.class);
 				Intent mainIntent = new Intent(SplashActivity.this,
-						MainGroupActivity.class);
+						MainActivity.class);
 				SplashActivity.this.startActivity(mainIntent);
 				SplashActivity.this.finish();
 			}
