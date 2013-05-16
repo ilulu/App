@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -161,6 +162,16 @@ public class MainGroupActivity extends ActivityGroup {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main_group, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId()==R.id.action_exit2){
+			Sysutil mSysUtil= new Sysutil(MainGroupActivity.this);  
+            mSysUtil.exit();  
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 }

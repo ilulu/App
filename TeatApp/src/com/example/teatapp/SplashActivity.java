@@ -14,10 +14,8 @@ public class SplashActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
+//		this.requestWindowFeature(Window.FEATURE_NO_TITLE);// 去掉标题栏
 		super.onCreate(savedInstanceState);
-//		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN);// 去掉信息栏
 
 		setContentView(R.layout.activity_splash);
 

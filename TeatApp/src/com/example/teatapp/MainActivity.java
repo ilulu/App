@@ -12,8 +12,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
 
 				HttpPost httpPost = new HttpPost(address.toString());
 				try {
+					
 					HttpResponse httpResponse = httpClient.execute(httpPost);
 					if (httpResponse.getStatusLine().getStatusCode() == 200) {
 						String result = EntityUtils.toString(httpResponse
@@ -67,8 +68,9 @@ public class MainActivity extends Activity {
 									.show();
 						} else if ("Success".equals(result)) {
 							 Intent i=new Intent();
-							 i.setClass(MainActivity.this,ScanActivity.class);
+							 i.setClass(MainActivity.this,MainGroupActivity.class);
 							 startActivity(i);
+							 
 						}
 					}
 				} catch (Exception e) {
@@ -88,5 +90,26 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId()==R.id.actoin_exit){
+			finish();
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	 protected void onStart() {  
+	        int flag = getIntent().getIntExtra("flag", 0);  
+	        if(flag == Sysutil.EXIT_APPLICATION){  
+	            finish();  
+	        }  
+	        super.onResume();  
+	          
+	    }  
+	
 
 }
